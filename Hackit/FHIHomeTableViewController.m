@@ -20,7 +20,7 @@
 }
 
 - (void)awakeFromNib {
-    [SSManagedObject resetPersistentStore];
+    self.title = @"Home";
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:[FHIPost entityName]];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"point" ascending:NO]];
     _fetchedResultController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:[SSManagedObject mainQueueContext] sectionNameKeyPath:nil cacheName:nil];
