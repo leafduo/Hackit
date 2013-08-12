@@ -15,7 +15,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    FHIHomeTableViewController *homeTableViewController = (FHIHomeTableViewController *)self.window.rootViewController;
 
     return YES;
 }

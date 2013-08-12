@@ -15,4 +15,8 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
     #import <SSDataKit.h>
+
+    // The following 2 header files were added to silent warnings.
+    #import <SystemConfiguration/SystemConfiguration.h>
+    #import <MobileCoreServices/MobileCoreServices.h>
 #endif
