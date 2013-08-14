@@ -13,11 +13,15 @@
 
 @interface FHIPost : SSManagedObject
 
-+ (instancetype)insertOrUpdateWithXMLElement:(DDXMLElement *)postElement;
++ (instancetype)findExistingObjectByIdentifier:(NSString *)identifier;
++ (instancetype)findExistingObjectByIdentifierInXMLElement:(DDXMLElement *)element;
+- (void)setWithXMLElement:(DDXMLElement *)element;
 
-@property (nonatomic, retain) NSNumber *identifier;
+
+@property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSNumber *point;
+@property (nonatomic, retain) NSNumber *rank;
 @property (nonatomic, retain) NSDate *createDate;
 @property (nonatomic, retain) NSURL *url;
 

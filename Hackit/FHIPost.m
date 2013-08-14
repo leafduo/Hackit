@@ -17,6 +17,7 @@
 @dynamic identifier;
 @dynamic title;
 @dynamic point;
+@dynamic rank;
 @dynamic createDate;
 @dynamic url;
 
@@ -29,42 +30,36 @@
     return _formatter;
 }
 
-+ (instancetype)insertOrUpdateWithXMLElement:(DDXMLElement *)postElement {
-    FHIPost *post = [[FHIPost alloc] initWithContext:[SSManagedObject mainQueueContext]];
-    
-    post.identifier = @([[[postElement stringValueOfFirstChildElementNamed:@"hnsearch_id"] componentsSeparatedByString:@"-"][0] integerValue]);
-    post.title = [postElement stringValueOfFirstChildElementNamed:@"title"];
-    post.url = [NSURL URLWithString:[postElement stringValueOfFirstChildElementNamed:@"link"]];
-    
-    NSString *pointString = [postElement stringValueOfFirstChildElementNamed:@"points"];
-    if (pointString) {
-        post.point = @([pointString integerValue]);
++ (instancetype)findExistingObjectByIdentifier:(NSString *)identifier {
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:[[self class] entityName]];
+    request.predicate = [NSPredicate predicateWithFormat:@"identifier = %@", identifier];
+    NSArray *result = [[SSManagedObject mainQueueContext] executeFetchRequest:request error:nil];
+    NSAssert([result count] <= 1, @"We should not have more than one objects with the same identifier");
+    if ([result count]) {
+        return result[0];
     } else {
-        post.point = @(NSNotFound);
+        return nil;
     }
-    
-    NSString *dateString = [postElement stringValueOfFirstChildElementNamed:@"create_ts"];
-    if (dateString) {
-        post.createDate = [[self ISO8601DateFormatter] dateFromString:dateString];
-    } else {
-        post.createDate = [NSDate distantPast];
-    }
-    return post;
 }
 
-- (void)setWithXMLElement:(DDXMLElement *)postElement {
-    self.identifier = @([[[postElement stringValueOfFirstChildElementNamed:@"hnsearch_id"] componentsSeparatedByString:@"-"][0] integerValue]);
-    self.title = [postElement stringValueOfFirstChildElementNamed:@"title"];
-    self.url = [NSURL URLWithString:[postElement stringValueOfFirstChildElementNamed:@"link"]];
++ (instancetype)findExistingObjectByIdentifierInXMLElement:(DDXMLElement *)element {
+    NSString *identifier = [element stringValueOfFirstChildElementNamed:@"hnsearch_id"];
+    return [[self class] findExistingObjectByIdentifier:identifier];
+}
+
+- (void)setWithXMLElement:(DDXMLElement *)element {
+    self.identifier = [element stringValueOfFirstChildElementNamed:@"hnsearch_id"];
+    self.title = [element stringValueOfFirstChildElementNamed:@"title"];
+    self.url = [NSURL URLWithString:[element stringValueOfFirstChildElementNamed:@"link"]];
     
-    NSString *pointString = [postElement stringValueOfFirstChildElementNamed:@"points"];
+    NSString *pointString = [element stringValueOfFirstChildElementNamed:@"points"];
     if (pointString) {
         self.point = @([pointString integerValue]);
     } else {
         self.point = @(NSNotFound);
     }
     
-    NSString *dateString = [postElement stringValueOfFirstChildElementNamed:@"create_ts"];
+    NSString *dateString = [element stringValueOfFirstChildElementNamed:@"create_ts"];
     if (dateString) {
         self.createDate = [[[self class] ISO8601DateFormatter] dateFromString:dateString];
     } else {

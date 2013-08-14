@@ -28,8 +28,13 @@
     AFKissXMLRequestOperation *operation = [AFKissXMLRequestOperation XMLDocumentRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, DDXMLDocument *XMLDocument) {
         DDXMLElement *channel = [[XMLDocument rootElement] elementsForName:@"channel"][0];
         NSArray *items = [channel elementsForName:@"item"];
-        [items enumerateObjectsUsingBlock:^(DDXMLElement *postElement, NSUInteger idx, BOOL *stop) {
-            [FHIPost insertOrUpdateWithXMLElement:postElement];
+        [items enumerateObjectsUsingBlock:^(DDXMLElement *element, NSUInteger idx, BOOL *stop) {
+            FHIPost *post = [FHIPost findExistingObjectByIdentifierInXMLElement:element];
+            if (!post) {
+                post = [[FHIPost alloc] initWithContext:[SSManagedObject mainQueueContext]];
+            }
+            [post setWithXMLElement:element];
+            post.rank = @(idx);
         }];
         if (completion) {
             completion(@[], nil);

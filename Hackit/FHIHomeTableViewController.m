@@ -22,7 +22,7 @@
 - (void)awakeFromNib {
     self.title = @"Home";
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:[FHIPost entityName]];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"point" ascending:NO]];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"rank" ascending:YES]];
     _fetchedResultController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:[SSManagedObject mainQueueContext] sectionNameKeyPath:nil cacheName:nil];
     _fetchedResultController.delegate = self;
     [_fetchedResultController performFetch:nil];
