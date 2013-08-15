@@ -7,10 +7,13 @@
 //
 
 #import "FHIEntryCell.h"
+#import "FHIPost.h"
 
 @interface FHIEntryCell ()
 
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
+@property (nonatomic, strong) IBOutlet UILabel *pointLabel;
+@property (nonatomic, strong) IBOutlet UILabel *dateLabel;
 
 @end
 
@@ -32,9 +35,11 @@
     // Configure the view for the selected state
 }
 
-- (void)setTitle:(NSString *)title {
-    _title = title;
-    self.titleLabel.text = _title;
+- (void)setPost:(FHIPost *)post {
+    _post = post;
+    self.titleLabel.text = _post.title;
+    self.pointLabel.text = [_post.point stringValue];
+//    self.dateLabel.text = _post.createDate;
 }
 
 @end

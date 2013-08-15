@@ -67,7 +67,7 @@
     FHIEntryCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     FHIPost *post = [_fetchedResultController objectAtIndexPath:indexPath];
-    cell.title = post.title;
+    cell.post = post;
     
     return cell;
 }

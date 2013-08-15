@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class FHIPost;
+
 @interface FHIEntryCell : UITableViewCell
 
-@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) FHIPost *post;
 
 @end
