@@ -72,6 +72,14 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    FHIPost *post = [_fetchedResultController objectAtIndexPath:indexPath];
+    if ([[UIApplication sharedApplication] canOpenURL:post.url]) {
+        [[UIApplication sharedApplication] openURL:post.url];
+    };
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
