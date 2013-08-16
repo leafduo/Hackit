@@ -26,13 +26,20 @@
     _fetchedResultController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:[SSManagedObject mainQueueContext] sectionNameKeyPath:nil cacheName:nil];
     _fetchedResultController.delegate = self;
     [_fetchedResultController performFetch:nil];
+    [self.refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self refreshData:self];
+}
+
+- (IBAction)refreshData:(id)sender {
+    [self.refreshControl beginRefreshing];
     [[FHIHackerNewsService sharedService] fetchPostsCompletion:^(NSArray *posts, NSError *error) {
         [[SSManagedObject mainQueueContext] save:nil];
+        [self.refreshControl endRefreshing];
     }];
 }
 
