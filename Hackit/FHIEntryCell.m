@@ -8,6 +8,7 @@
 
 #import "FHIEntryCell.h"
 #import "FHIPost.h"
+#import <NSDate+TimeAgo.h>
 
 @interface FHIEntryCell ()
 
@@ -39,7 +40,7 @@
     _post = post;
     self.titleLabel.text = _post.title;
     self.pointLabel.text = [_post.point stringValue];
-//    self.dateLabel.text = _post.createDate;
+    self.dateLabel.text = [_post.createDate timeAgo];
 }
 
 @end
