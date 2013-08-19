@@ -23,7 +23,10 @@
     self.title = @"Home";
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:[FHIPost entityName]];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"rank" ascending:YES]];
-    _fetchedResultController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:[SSManagedObject mainQueueContext] sectionNameKeyPath:nil cacheName:nil];
+    request.predicate = [NSPredicate predicateWithFormat:@"point >= 50"];
+    _fetchedResultController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                   managedObjectContext:[SSManagedObject mainQueueContext]
+                                                                     sectionNameKeyPath:nil cacheName:nil];
     _fetchedResultController.delegate = self;
     [_fetchedResultController performFetch:nil];
     [self.refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
