@@ -24,6 +24,7 @@ PODS:
     - libextobjc/EXTScope (~> 0.2.5)
   - ReactiveCocoa/RACExtensions (1.9.6):
     - ReactiveCocoa/Core
+  - Reveal-iOS-SDK (0.9.0)
   - SSDataKit (0.1.5)
 
 DEPENDENCIES:
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - ISO8601DateFormatter
   - NSDate+TimeAgo
   - ReactiveCocoa
+  - Reveal-iOS-SDK
   - SSDataKit
 
 SPEC CHECKSUMS:
@@ -43,6 +45,7 @@ SPEC CHECKSUMS:
   libextobjc: 2cbc74caf8bdc74a86fdf24673f773c83424ea98
   NSDate+TimeAgo: fe93d3042e83093ae3630bc47ae7d57f782733f6
   ReactiveCocoa: 0586996422c05830e2f70ca8c8a5214e9070983f
+  Reveal-iOS-SDK: 2f011ee3e4653abc92b652f409f1641c7a1dae00
   SSDataKit: f5fdb3617925a5b8a30afad0496ac58b39c6c517
 
 COCOAPODS: 0.23.0
