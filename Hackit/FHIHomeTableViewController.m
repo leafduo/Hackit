@@ -41,7 +41,6 @@
 - (IBAction)refreshData:(id)sender {
     [self.refreshControl beginRefreshing];
     [[FHIHackerNewsService sharedService] fetchPostsCompletion:^(NSArray *posts, NSError *error) {
-        [[SSManagedObject mainQueueContext] save:nil];
         [self.refreshControl endRefreshing];
     }];
 }
