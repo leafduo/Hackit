@@ -13,8 +13,7 @@
 @interface FHIEntryCell ()
 
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
-@property (nonatomic, strong) IBOutlet UILabel *pointLabel;
-@property (nonatomic, strong) IBOutlet UILabel *dateLabel;
+@property (nonatomic, strong) IBOutlet UILabel *subtextlabel;
 
 @end
 
@@ -39,8 +38,8 @@
 - (void)setPost:(FHIPost *)post {
     _post = post;
     self.titleLabel.text = _post.title;
-    self.pointLabel.text = [_post.point stringValue];
-    self.dateLabel.text = [_post.createDate timeAgo];
+    self.subtextlabel.text = [NSString stringWithFormat:@"%@ points %@",
+                              post.point, [_post.createDate timeAgo]];
 }
 
 @end
