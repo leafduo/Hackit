@@ -40,6 +40,10 @@
     self.titleLabel.text = _post.title;
     self.subtextlabel.text = [NSString stringWithFormat:@"%@ points %@",
                               post.point, [_post.createDate timeAgo]];
+    self.contentView.backgroundColor = [UIColor colorWithHue:0.067
+                                                  saturation:[_post.point integerValue] / 256.0
+                                                  brightness:1
+                                                       alpha:1];
 }
 
 @end
