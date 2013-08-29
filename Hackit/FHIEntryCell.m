@@ -23,9 +23,13 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        
     }
     return self;
+}
+
+- (void)awakeFromNib {
+    self.backgroundView = [[UIView alloc] init];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -40,8 +44,11 @@
     self.titleLabel.text = _post.title;
     self.subtextlabel.text = [NSString stringWithFormat:@"%@ points %@",
                               post.point, [_post.createDate timeAgo]];
-    self.contentView.backgroundColor = [UIColor colorWithHue:0.067
-                                                  saturation:[_post.point integerValue] / 256.0
+//    CGFloat impact = -1/(pow([_post.point doubleValue] / 256 + 1, 1))+1;
+    CGFloat impact = -pow(2, -[_post.point doubleValue]/64) + 1;
+    NSLog(@"point, impact: %@, %f", _post.point, impact);
+    self.backgroundView.backgroundColor = [UIColor colorWithHue:0.067
+                                                  saturation:impact
                                                   brightness:1
                                                        alpha:1];
 }
