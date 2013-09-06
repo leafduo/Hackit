@@ -20,8 +20,9 @@
 
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSNumber *point;
-@property (nonatomic, retain) NSNumber *rank;
+@property (nonatomic, assign) NSUInteger point;
+@property (nonatomic, assign) NSUInteger rank;
+@property (nonatomic, assign) BOOL starred;
 @property (nonatomic, retain) NSDate *createDate;
 @property (nonatomic, retain) NSURL *url;
 

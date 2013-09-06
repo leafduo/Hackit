@@ -18,6 +18,7 @@
 @dynamic title;
 @dynamic point;
 @dynamic rank;
+@dynamic starred;
 @dynamic createDate;
 @dynamic url;
 
@@ -54,9 +55,9 @@
     
     NSString *pointString = [element stringValueOfFirstChildElementNamed:@"points"];
     if (pointString) {
-        self.point = @([pointString integerValue]);
+        self.point = [pointString integerValue];
     } else {
-        self.point = @(NSNotFound);
+        self.point = NSNotFound;
     }
     
     NSString *dateString = [element stringValueOfFirstChildElementNamed:@"create_ts"];

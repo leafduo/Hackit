@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		923995CB17DA570600883BD1 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 923995C917DA570600883BD1 /* UIImage+Tint.m */; };
+		923995CE17DA574E00883BD1 /* FHITintableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 923995CD17DA574E00883BD1 /* FHITintableButton.m */; };
 		9266942917B6B97D001CBE95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9266942817B6B97D001CBE95 /* Foundation.framework */; };
 		9266942B17B6B97D001CBE95 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9266942A17B6B97D001CBE95 /* CoreGraphics.framework */; };
 		9266942D17B6B97D001CBE95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9266942C17B6B97D001CBE95 /* UIKit.framework */; };
@@ -44,6 +46,10 @@
 
 /* Begin PBXFileReference section */
 		329BBA0DE38D447FA96FEF5A /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		923995C917DA570600883BD1 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
+		923995CA17DA570600883BD1 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
+		923995CC17DA574E00883BD1 /* FHITintableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHITintableButton.h; sourceTree = "<group>"; };
+		923995CD17DA574E00883BD1 /* FHITintableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHITintableButton.m; sourceTree = "<group>"; };
 		9266942517B6B97D001CBE95 /* Hackit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9266942817B6B97D001CBE95 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9266942A17B6B97D001CBE95 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -152,10 +158,14 @@
 				9266946F17B6C0B6001CBE95 /* FHIHTTPClient.m */,
 				9266947D17B75374001CBE95 /* FHIPost.h */,
 				9266947E17B75374001CBE95 /* FHIPost.m */,
+				923995CC17DA574E00883BD1 /* FHITintableButton.h */,
+				923995CD17DA574E00883BD1 /* FHITintableButton.m */,
 				9274981417B7C19C007957D4 /* DDXMLElement+HackitAdditions.h */,
 				9274981517B7C19C007957D4 /* DDXMLElement+HackitAdditions.m */,
 				9266948017B75609001CBE95 /* FHIHackerNewsService.h */,
 				9266948117B75609001CBE95 /* FHIHackerNewsService.m */,
+				923995C917DA570600883BD1 /* UIImage+Tint.m */,
+				923995CA17DA570600883BD1 /* UIImage+Tint.h */,
 				9266944817B6B97D001CBE95 /* Images.xcassets */,
 				9266943F17B6B97D001CBE95 /* Hackit.xcdatamodeld */,
 				9266943117B6B97D001CBE95 /* Supporting Files */,
@@ -327,10 +337,12 @@
 			files = (
 				9266943B17B6B97D001CBE95 /* FHIAppDelegate.m in Sources */,
 				9266947F17B75374001CBE95 /* FHIPost.m in Sources */,
+				923995CB17DA570600883BD1 /* UIImage+Tint.m in Sources */,
 				9274981617B7C19C007957D4 /* DDXMLElement+HackitAdditions.m in Sources */,
 				9266947017B6C0B6001CBE95 /* FHIHTTPClient.m in Sources */,
 				9266948217B75609001CBE95 /* FHIHackerNewsService.m in Sources */,
 				9266944117B6B97D001CBE95 /* Hackit.xcdatamodeld in Sources */,
+				923995CE17DA574E00883BD1 /* FHITintableButton.m in Sources */,
 				92DB8BAD17B92B0300B6DE33 /* FHIHomeTableViewController.m in Sources */,
 				92DB8BB017B948F300B6DE33 /* FHIEntryCell.m in Sources */,
 				9266943717B6B97D001CBE95 /* main.m in Sources */,

@@ -37,18 +37,34 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpf-VT-Ilw" customClass="FHITintableButton">
+                                            <rect key="frame" x="726" y="24" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="1CV-nL-LCW"/>
+                                                <constraint firstAttribute="width" constant="22" id="Quk-BP-kfR"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                            <state key="normal" image="star"/>
+                                            <connections>
+                                                <action selector="starButtonPressed:" destination="pNA-de-dmI" eventType="touchUpInside" id="0fY-8a-qqv"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="tpf-VT-Ilw" secondAttribute="trailing" constant="20" id="ASH-kO-SVR"/>
                                         <constraint firstItem="A9p-lb-sTh" firstAttribute="top" secondItem="Q3P-vC-o3j" secondAttribute="top" constant="8" id="Aei-DF-lSE"/>
                                         <constraint firstAttribute="trailing" secondItem="A9p-lb-sTh" secondAttribute="trailing" constant="20" id="LSQ-Bb-1lT"/>
                                         <constraint firstAttribute="bottom" secondItem="2Vy-nV-Ijn" secondAttribute="bottom" constant="8" id="adi-bw-3j5"/>
                                         <constraint firstItem="A9p-lb-sTh" firstAttribute="leading" secondItem="Q3P-vC-o3j" secondAttribute="leading" constant="20" id="cdR-Gh-cKn"/>
                                         <constraint firstItem="2Vy-nV-Ijn" firstAttribute="leading" secondItem="A9p-lb-sTh" secondAttribute="leading" id="gFK-hR-Xhf"/>
+                                        <constraint firstAttribute="centerY" secondItem="tpf-VT-Ilw" secondAttribute="centerY" id="gZH-Jz-rZO"/>
                                         <constraint firstItem="2Vy-nV-Ijn" firstAttribute="top" secondItem="A9p-lb-sTh" secondAttribute="bottom" constant="8" id="gwd-4W-KSN"/>
                                         <constraint firstItem="2Vy-nV-Ijn" firstAttribute="width" secondItem="A9p-lb-sTh" secondAttribute="width" id="xIr-9A-BFQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="starButton" destination="tpf-VT-Ilw" id="GPn-gK-2s9"/>
                                     <outlet property="subtextlabel" destination="2Vy-nV-Ijn" id="TVB-xW-pQX"/>
                                     <outlet property="titleLabel" destination="A9p-lb-sTh" id="O2x-lF-aWo"/>
                                 </connections>
@@ -85,6 +101,9 @@
             <point key="canvasLocation" x="-1072" y="3"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="star" width="128" height="128"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
         <simulatedOrientationMetrics key="orientation"/>
