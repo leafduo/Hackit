@@ -111,6 +111,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		923995CF17DA58D000883BD1 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9266943917B6B97D001CBE95 /* FHIAppDelegate.h */,
+				9266943A17B6B97D001CBE95 /* FHIAppDelegate.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		923995D017DA58F700883BD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9266943C17B6B97D001CBE95 /* Main.storyboard */,
+				9266944817B6B97D001CBE95 /* Images.xcassets */,
+				92DB8BAB17B92B0200B6DE33 /* FHIHomeTableViewController.h */,
+				92DB8BAC17B92B0200B6DE33 /* FHIHomeTableViewController.m */,
+				92DB8BAE17B948F300B6DE33 /* FHIEntryCell.h */,
+				92DB8BAF17B948F300B6DE33 /* FHIEntryCell.m */,
+				923995CC17DA574E00883BD1 /* FHITintableButton.h */,
+				923995CD17DA574E00883BD1 /* FHITintableButton.m */,
+				923995C917DA570600883BD1 /* UIImage+Tint.m */,
+				923995CA17DA570600883BD1 /* UIImage+Tint.h */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		923995D117DA590A00883BD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9266943F17B6B97D001CBE95 /* Hackit.xcdatamodeld */,
+				9274981417B7C19C007957D4 /* DDXMLElement+HackitAdditions.h */,
+				9274981517B7C19C007957D4 /* DDXMLElement+HackitAdditions.m */,
+				9266947D17B75374001CBE95 /* FHIPost.h */,
+				9266947E17B75374001CBE95 /* FHIPost.m */,
+				9266946E17B6C0B6001CBE95 /* FHIHTTPClient.h */,
+				9266946F17B6C0B6001CBE95 /* FHIHTTPClient.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		923995D217DA591300883BD1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9266948017B75609001CBE95 /* FHIHackerNewsService.h */,
+				9266948117B75609001CBE95 /* FHIHackerNewsService.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		9266941C17B6B97D001CBE95 = {
 			isa = PBXGroup;
 			children = (
@@ -147,27 +196,10 @@
 		9266943017B6B97D001CBE95 /* Hackit */ = {
 			isa = PBXGroup;
 			children = (
-				9266943917B6B97D001CBE95 /* FHIAppDelegate.h */,
-				9266943A17B6B97D001CBE95 /* FHIAppDelegate.m */,
-				92DB8BAB17B92B0200B6DE33 /* FHIHomeTableViewController.h */,
-				92DB8BAC17B92B0200B6DE33 /* FHIHomeTableViewController.m */,
-				9266943C17B6B97D001CBE95 /* Main.storyboard */,
-				92DB8BAE17B948F300B6DE33 /* FHIEntryCell.h */,
-				92DB8BAF17B948F300B6DE33 /* FHIEntryCell.m */,
-				9266946E17B6C0B6001CBE95 /* FHIHTTPClient.h */,
-				9266946F17B6C0B6001CBE95 /* FHIHTTPClient.m */,
-				9266947D17B75374001CBE95 /* FHIPost.h */,
-				9266947E17B75374001CBE95 /* FHIPost.m */,
-				923995CC17DA574E00883BD1 /* FHITintableButton.h */,
-				923995CD17DA574E00883BD1 /* FHITintableButton.m */,
-				9274981417B7C19C007957D4 /* DDXMLElement+HackitAdditions.h */,
-				9274981517B7C19C007957D4 /* DDXMLElement+HackitAdditions.m */,
-				9266948017B75609001CBE95 /* FHIHackerNewsService.h */,
-				9266948117B75609001CBE95 /* FHIHackerNewsService.m */,
-				923995C917DA570600883BD1 /* UIImage+Tint.m */,
-				923995CA17DA570600883BD1 /* UIImage+Tint.h */,
-				9266944817B6B97D001CBE95 /* Images.xcassets */,
-				9266943F17B6B97D001CBE95 /* Hackit.xcdatamodeld */,
+				923995CF17DA58D000883BD1 /* Application */,
+				923995D117DA590A00883BD1 /* Model */,
+				923995D217DA591300883BD1 /* Service */,
+				923995D017DA58F700883BD1 /* View */,
 				9266943117B6B97D001CBE95 /* Supporting Files */,
 			);
 			path = Hackit;
