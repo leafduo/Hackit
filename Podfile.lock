@@ -6,26 +6,27 @@ PODS:
   - ISO8601DateFormatter (0.6)
   - JRSwizzle (1.0)
   - KissXML (5.0)
-  - libextobjc/EXTConcreteProtocol (0.2.5):
+  - libextobjc/EXTConcreteProtocol (0.3):
     - libextobjc/RuntimeExtensions
-  - libextobjc/EXTKeyPathCoding (0.2.5):
+  - libextobjc/EXTKeyPathCoding (0.3):
     - libextobjc/RuntimeExtensions
-  - libextobjc/EXTScope (0.2.5):
+  - libextobjc/EXTScope (0.3):
     - libextobjc/RuntimeExtensions
-  - libextobjc/RuntimeExtensions (0.2.5)
+  - libextobjc/RuntimeExtensions (0.3)
   - NSDate+TimeAgo (1.0.2)
-  - ReactiveCocoa (1.9.6):
+  - ReactiveCocoa (1.9.7):
     - ReactiveCocoa/Core
     - ReactiveCocoa/RACExtensions
-  - ReactiveCocoa/Core (1.9.6):
+  - ReactiveCocoa/Core (1.9.7):
     - JRSwizzle (~> 1.0)
-    - libextobjc/EXTConcreteProtocol (~> 0.2.5)
-    - libextobjc/EXTKeyPathCoding (~> 0.2.5)
-    - libextobjc/EXTScope (~> 0.2.5)
-  - ReactiveCocoa/RACExtensions (1.9.6):
+    - libextobjc/EXTConcreteProtocol (~> 0.3.0)
+    - libextobjc/EXTKeyPathCoding (~> 0.3.0)
+    - libextobjc/EXTScope (~> 0.3.0)
+  - ReactiveCocoa/RACExtensions (1.9.7):
     - ReactiveCocoa/Core
-  - Reveal-iOS-SDK (0.9.0)
+  - Reveal-iOS-SDK (0.9.1)
   - SSDataKit (0.1.5)
+  - SVWebViewController (0.1)
 
 DEPENDENCIES:
   - AFKissXMLRequestOperation
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - ReactiveCocoa
   - Reveal-iOS-SDK
   - SSDataKit
+  - SVWebViewController
 
 SPEC CHECKSUMS:
   AFKissXMLRequestOperation: c5010fd22d4f03371d9960fd09792f7bc3b32f45
@@ -42,10 +44,11 @@ SPEC CHECKSUMS:
   ISO8601DateFormatter: 077ce9d8cfba171bc1ced6cba0d2ae4aefab7619
   JRSwizzle: 6242ff38485d870fc2636899048ee1ab883ae587
   KissXML: 4c66b6f39ef49c23e6bb8d335b94136f12b1b615
-  libextobjc: 2cbc74caf8bdc74a86fdf24673f773c83424ea98
+  libextobjc: 820a79dbbbc498611e04fffd07d2d52a5588e7ac
   NSDate+TimeAgo: fe93d3042e83093ae3630bc47ae7d57f782733f6
-  ReactiveCocoa: 0586996422c05830e2f70ca8c8a5214e9070983f
-  Reveal-iOS-SDK: 2f011ee3e4653abc92b652f409f1641c7a1dae00
+  ReactiveCocoa: b680ab9b8c64a3c9956492f0702006ea541164fc
+  Reveal-iOS-SDK: 7396a20e743807b1e6f1caae664e1a9dc0cc442c
   SSDataKit: f5fdb3617925a5b8a30afad0496ac58b39c6c517
+  SVWebViewController: 2e3a367237bb7072e54e05c6eaa82d21a12ba676
 
-COCOAPODS: 0.23.0
+COCOAPODS: 0.24.0

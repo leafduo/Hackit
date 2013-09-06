@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 leafduo.com. All rights reserved.
 //
 
+#import <SVModalWebViewController.h>
+
 #import "FHIHomeTableViewController.h"
 #import "FHIPost.h"
 #import "FHIEntryCell.h"
@@ -83,9 +85,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     FHIPost *post = [_fetchedResultController objectAtIndexPath:indexPath];
-    if ([[UIApplication sharedApplication] canOpenURL:post.url]) {
-        [[UIApplication sharedApplication] openURL:post.url];
-    };
+//    if ([[UIApplication sharedApplication] canOpenURL:post.url]) {
+//        [[UIApplication sharedApplication] openURL:post.url];
+//    };
+    SVModalWebViewController *modalWebViewControoler = [[SVModalWebViewController alloc] initWithURL:post.url];
+    [self presentViewController:modalWebViewControoler animated:YES completion:NULL];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

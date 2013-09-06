@@ -44,7 +44,6 @@
     self.titleLabel.text = _post.title;
     self.subtextlabel.text = [NSString stringWithFormat:@"%@ points %@",
                               post.point, [_post.createDate timeAgo]];
-//    CGFloat impact = -1/(pow([_post.point doubleValue] / 256 + 1, 1))+1;
     CGFloat impact = -pow(2, -[_post.point doubleValue]/64) + 1;
     NSLog(@"point, impact: %@, %f", _post.point, impact);
     self.backgroundView.backgroundColor = [UIColor colorWithHue:0.067

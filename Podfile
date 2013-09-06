@@ -7,3 +7,4 @@ pod 'SSDataKit'
 pod 'ISO8601DateFormatter'
 pod 'NSDate+TimeAgo'
 pod "Reveal-iOS-SDK"
+pod 'SVWebViewController'
