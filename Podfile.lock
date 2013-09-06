@@ -25,6 +25,7 @@ PODS:
   - ReactiveCocoa/RACExtensions (1.9.7):
     - ReactiveCocoa/Core
   - Reveal-iOS-SDK (0.9.1)
+  - SAMGradientView (0.1.2)
   - SSDataKit (0.1.5)
   - SVWebViewController (0.1)
 
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - NSDate+TimeAgo
   - ReactiveCocoa
   - Reveal-iOS-SDK
+  - SAMGradientView
   - SSDataKit
   - SVWebViewController
 
@@ -48,6 +50,7 @@ SPEC CHECKSUMS:
   NSDate+TimeAgo: fe93d3042e83093ae3630bc47ae7d57f782733f6
   ReactiveCocoa: b680ab9b8c64a3c9956492f0702006ea541164fc
   Reveal-iOS-SDK: 7396a20e743807b1e6f1caae664e1a9dc0cc442c
+  SAMGradientView: cd47819cbc5355379c8607084f421e67546b7134
   SSDataKit: f5fdb3617925a5b8a30afad0496ac58b39c6c517
   SVWebViewController: 2e3a367237bb7072e54e05c6eaa82d21a12ba676
 
