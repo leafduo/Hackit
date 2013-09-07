@@ -20,8 +20,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A9p-lb-sTh">
-                                            <rect key="frame" x="20" y="8" width="728" height="30"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A9p-lb-sTh" userLabel="Title Label">
+                                            <rect key="frame" x="20" y="8" width="660" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="5Uf-UF-EL0"/>
@@ -30,36 +30,49 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vy-nV-Ijn">
-                                            <rect key="frame" x="20" y="46" width="728" height="15"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vy-nV-Ijn" userLabel="Points Label">
+                                            <rect key="frame" x="20" y="46" width="660" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpf-VT-Ilw" customClass="FHITintableButton">
-                                            <rect key="frame" x="726" y="24" width="22" height="22"/>
+                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vtz-IW-fkD" userLabel="Button Background View" customClass="UIControl">
+                                            <rect key="frame" x="680" y="0.0" width="88" height="69"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpf-VT-Ilw" userLabel="Star Button" customClass="FHITintableButton">
+                                                    <rect key="frame" x="46" y="24" width="22" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="22" id="0lB-HM-7Kn"/>
+                                                        <constraint firstAttribute="height" constant="22" id="Rhs-Li-KyR"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                                    <state key="normal" image="star"/>
+                                                    <connections>
+                                                        <action selector="starButtonPressed:" destination="pNA-de-dmI" eventType="touchUpInside" id="0fY-8a-qqv"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="22" id="1CV-nL-LCW"/>
-                                                <constraint firstAttribute="width" constant="22" id="Quk-BP-kfR"/>
+                                                <constraint firstAttribute="width" constant="88" id="WUh-0Z-qn7"/>
+                                                <constraint firstAttribute="trailing" secondItem="tpf-VT-Ilw" secondAttribute="trailing" constant="20" id="b1x-mL-7f0"/>
+                                                <constraint firstAttribute="centerY" secondItem="tpf-VT-Ilw" secondAttribute="centerY" id="nFt-Uz-vVD"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                            <state key="normal" image="star"/>
-                                            <connections>
-                                                <action selector="starButtonPressed:" destination="pNA-de-dmI" eventType="touchUpInside" id="0fY-8a-qqv"/>
-                                            </connections>
-                                        </button>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="tpf-VT-Ilw" secondAttribute="trailing" constant="20" id="ASH-kO-SVR"/>
                                         <constraint firstItem="A9p-lb-sTh" firstAttribute="top" secondItem="Q3P-vC-o3j" secondAttribute="top" constant="8" id="Aei-DF-lSE"/>
-                                        <constraint firstAttribute="trailing" secondItem="A9p-lb-sTh" secondAttribute="trailing" constant="20" id="LSQ-Bb-1lT"/>
+                                        <constraint firstItem="Vtz-IW-fkD" firstAttribute="top" secondItem="Q3P-vC-o3j" secondAttribute="top" id="PFX-T8-yV4"/>
+                                        <constraint firstAttribute="trailing" secondItem="Vtz-IW-fkD" secondAttribute="trailing" id="a5X-1z-CEu"/>
                                         <constraint firstAttribute="bottom" secondItem="2Vy-nV-Ijn" secondAttribute="bottom" constant="8" id="adi-bw-3j5"/>
                                         <constraint firstItem="A9p-lb-sTh" firstAttribute="leading" secondItem="Q3P-vC-o3j" secondAttribute="leading" constant="20" id="cdR-Gh-cKn"/>
                                         <constraint firstItem="2Vy-nV-Ijn" firstAttribute="leading" secondItem="A9p-lb-sTh" secondAttribute="leading" id="gFK-hR-Xhf"/>
-                                        <constraint firstAttribute="centerY" secondItem="tpf-VT-Ilw" secondAttribute="centerY" id="gZH-Jz-rZO"/>
                                         <constraint firstItem="2Vy-nV-Ijn" firstAttribute="top" secondItem="A9p-lb-sTh" secondAttribute="bottom" constant="8" id="gwd-4W-KSN"/>
+                                        <constraint firstItem="Vtz-IW-fkD" firstAttribute="leading" secondItem="A9p-lb-sTh" secondAttribute="trailing" id="oTw-4q-kcb"/>
+                                        <constraint firstAttribute="bottom" secondItem="Vtz-IW-fkD" secondAttribute="bottom" id="v2Z-LH-BOA"/>
                                         <constraint firstItem="2Vy-nV-Ijn" firstAttribute="width" secondItem="A9p-lb-sTh" secondAttribute="width" id="xIr-9A-BFQ"/>
                                     </constraints>
                                 </tableViewCellContentView>

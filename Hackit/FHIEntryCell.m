@@ -33,6 +33,7 @@
 
 - (void)awakeFromNib {
     self.backgroundView = [[SAMGradientView alloc] init];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
