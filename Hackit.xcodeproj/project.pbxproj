@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		923995CB17DA570600883BD1 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 923995C917DA570600883BD1 /* UIImage+Tint.m */; };
 		923995CE17DA574E00883BD1 /* FHITintableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 923995CD17DA574E00883BD1 /* FHITintableButton.m */; };
+		923995D517DBB41E00883BD1 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923995D417DBB41E00883BD1 /* Crashlytics.framework */; };
 		9266942917B6B97D001CBE95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9266942817B6B97D001CBE95 /* Foundation.framework */; };
 		9266942B17B6B97D001CBE95 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9266942A17B6B97D001CBE95 /* CoreGraphics.framework */; };
 		9266942D17B6B97D001CBE95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9266942C17B6B97D001CBE95 /* UIKit.framework */; };
@@ -50,6 +51,7 @@
 		923995CA17DA570600883BD1 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
 		923995CC17DA574E00883BD1 /* FHITintableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHITintableButton.h; sourceTree = "<group>"; };
 		923995CD17DA574E00883BD1 /* FHITintableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHITintableButton.m; sourceTree = "<group>"; };
+		923995D417DBB41E00883BD1 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		9266942517B6B97D001CBE95 /* Hackit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9266942817B6B97D001CBE95 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9266942A17B6B97D001CBE95 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -93,6 +95,7 @@
 				9266942F17B6B97D001CBE95 /* CoreData.framework in Frameworks */,
 				9266942D17B6B97D001CBE95 /* UIKit.framework in Frameworks */,
 				9266942917B6B97D001CBE95 /* Foundation.framework in Frameworks */,
+				923995D517DBB41E00883BD1 /* Crashlytics.framework in Frameworks */,
 				CF5E5410625C4A1F82348B46 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,6 +186,7 @@
 		9266942717B6B97D001CBE95 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				923995D417DBB41E00883BD1 /* Crashlytics.framework */,
 				9266942817B6B97D001CBE95 /* Foundation.framework */,
 				9266942A17B6B97D001CBE95 /* CoreGraphics.framework */,
 				9266942C17B6B97D001CBE95 /* UIKit.framework */,
@@ -246,6 +250,7 @@
 				9266942217B6B97D001CBE95 /* Frameworks */,
 				9266942317B6B97D001CBE95 /* Resources */,
 				92B27DCBC0034E57887EB15C /* Copy Pods Resources */,
+				923995D317DBB36900883BD1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -344,6 +349,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		923995D317DBB36900883BD1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 8642627290b54634887afc54ed5ae8a3a5036e20";
 		};
 		92B27DCBC0034E57887EB15C /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -507,6 +525,10 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/leafduo/src/Hackit,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Hackit/Hackit-Prefix.pch";
 				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
@@ -529,6 +551,10 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/leafduo/src/Hackit,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Hackit/Hackit-Prefix.pch";
 				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
