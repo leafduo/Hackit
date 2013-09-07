@@ -54,7 +54,6 @@
     self.subtextlabel.text = [NSString stringWithFormat:@"%d points %@",
                               post.point, [_post.createDate timeAgo]];
     CGFloat impact = -pow(2, -(NSInteger)_post.point/64.0) + 1;
-    NSLog(@"point, impact: %d, %f", _post.point, impact);
     self.backgroundView.gradientColors = @[[UIColor colorWithHue:0.067
                                                   saturation:impact
                                                   brightness:1
