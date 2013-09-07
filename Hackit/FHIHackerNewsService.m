@@ -28,7 +28,7 @@
     request.includesPropertyValues = NO;
     NSArray *posts = [[SSManagedObject mainQueueContext] executeFetchRequest:request error:nil];
     for (FHIPost *post in posts) {
-        [[SSManagedObject mainQueueContext] deleteObject:post];
+        post.rank = NSNotFound;
     }
     [[SSManagedObject mainQueueContext] save:nil];
 }
@@ -46,14 +46,16 @@
                 post = [[FHIPost alloc] initWithContext:[SSManagedObject mainQueueContext]];
             }
             [post setWithXMLElement:element];
-            post.rank = @(idx);
+            post.rank = idx;
         }];
         [[SSManagedObject mainQueueContext] save:nil];
         if (completion) {
             completion(@[], nil);
         }
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, DDXMLDocument *XMLDocument) {
-        ;
+        if (completion) {
+            completion(@[], error);
+        }
     }];
     [[FHIHTTPClient sharedClient] enqueueHTTPRequestOperation:operation];
 }

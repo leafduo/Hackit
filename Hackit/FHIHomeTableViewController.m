@@ -25,7 +25,6 @@
     self.title = @"Home";
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:[FHIPost entityName]];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"rank" ascending:YES]];
-//    request.predicate = [NSPredicate predicateWithFormat:@"point >= 50"];
     _fetchedResultController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                    managedObjectContext:[SSManagedObject mainQueueContext]
                                                                      sectionNameKeyPath:nil cacheName:nil];
@@ -85,9 +84,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     FHIPost *post = [_fetchedResultController objectAtIndexPath:indexPath];
-//    if ([[UIApplication sharedApplication] canOpenURL:post.url]) {
-//        [[UIApplication sharedApplication] openURL:post.url];
-//    };
     SVModalWebViewController *modalWebViewControoler = [[SVModalWebViewController alloc] initWithURL:post.url];
     [self presentViewController:modalWebViewControoler animated:YES completion:NULL];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
