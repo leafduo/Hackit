@@ -23,7 +23,18 @@
     return _sharedService;
 }
 
-- (void)deleteAllPosts {
+- (void)deleteUselessPosts {
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:[FHIPost entityName]];
+    request.includesPropertyValues = NO;
+    request.predicate = [NSPredicate predicateWithFormat:@"rank == %d AND starred == NO", NSNotFound];
+    NSArray *posts = [[SSManagedObject mainQueueContext] executeFetchRequest:request error:nil];
+    for (FHIPost *post in posts) {
+        [[SSManagedObject mainQueueContext] deleteObject:post];
+    }
+    [[SSManagedObject mainQueueContext] save:nil];
+}
+
+- (void)removeRankInAllPosts {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:[FHIPost entityName]];
     request.includesPropertyValues = NO;
     NSArray *posts = [[SSManagedObject mainQueueContext] executeFetchRequest:request error:nil];
@@ -38,7 +49,7 @@
                                              cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                          timeoutInterval:10];
     AFKissXMLRequestOperation *operation = [AFKissXMLRequestOperation XMLDocumentRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, DDXMLDocument *XMLDocument) {
-        [self deleteAllPosts];
+        [self removeRankInAllPosts];
         
         DDXMLElement *channel = [[XMLDocument rootElement] elementsForName:@"channel"][0];
         NSArray *items = [channel elementsForName:@"item"];
@@ -51,6 +62,7 @@
             post.rank = idx;
         }];
         [[SSManagedObject mainQueueContext] save:nil];
+        [self deleteUselessPosts];
         if (completion) {
             completion(@[], nil);
         }
