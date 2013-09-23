@@ -30,6 +30,7 @@
 		9266947F17B75374001CBE95 /* FHIPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 9266947E17B75374001CBE95 /* FHIPost.m */; };
 		9266948217B75609001CBE95 /* FHIHackerNewsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9266948117B75609001CBE95 /* FHIHackerNewsService.m */; };
 		9274981617B7C19C007957D4 /* DDXMLElement+HackitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9274981517B7C19C007957D4 /* DDXMLElement+HackitAdditions.m */; };
+		92AE159517EF5C4B00E0CFCF /* FHIShareKitConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AE159417EF5C4A00E0CFCF /* FHIShareKitConfigurator.m */; };
 		92DB8BAD17B92B0300B6DE33 /* FHIHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DB8BAC17B92B0200B6DE33 /* FHIHomeTableViewController.m */; };
 		92DB8BB017B948F300B6DE33 /* FHIEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DB8BAF17B948F300B6DE33 /* FHIEntryCell.m */; };
 		CF5E5410625C4A1F82348B46 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0D97DC28DD413F8CE751C6 /* libPods.a */; };
@@ -79,6 +80,9 @@
 		9266948117B75609001CBE95 /* FHIHackerNewsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHIHackerNewsService.m; sourceTree = "<group>"; };
 		9274981417B7C19C007957D4 /* DDXMLElement+HackitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDXMLElement+HackitAdditions.h"; sourceTree = "<group>"; };
 		9274981517B7C19C007957D4 /* DDXMLElement+HackitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDXMLElement+HackitAdditions.m"; sourceTree = "<group>"; };
+		92AE159317EF5C4A00E0CFCF /* FHIShareKitConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHIShareKitConfigurator.h; sourceTree = "<group>"; };
+		92AE159417EF5C4A00E0CFCF /* FHIShareKitConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHIShareKitConfigurator.m; sourceTree = "<group>"; };
+		92C88DD017F077DC00A53A3F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		92DB8BAB17B92B0200B6DE33 /* FHIHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHIHomeTableViewController.h; sourceTree = "<group>"; };
 		92DB8BAC17B92B0200B6DE33 /* FHIHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHIHomeTableViewController.m; sourceTree = "<group>"; };
 		92DB8BAE17B948F300B6DE33 /* FHIEntryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHIEntryCell.h; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 			children = (
 				9266943917B6B97D001CBE95 /* FHIAppDelegate.h */,
 				9266943A17B6B97D001CBE95 /* FHIAppDelegate.m */,
+				92AE159317EF5C4A00E0CFCF /* FHIShareKitConfigurator.h */,
+				92AE159417EF5C4A00E0CFCF /* FHIShareKitConfigurator.m */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 		9266942717B6B97D001CBE95 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92C88DD017F077DC00A53A3F /* Social.framework */,
 				923995D417DBB41E00883BD1 /* Crashlytics.framework */,
 				9266942817B6B97D001CBE95 /* Foundation.framework */,
 				9266942A17B6B97D001CBE95 /* CoreGraphics.framework */,
@@ -386,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9266943B17B6B97D001CBE95 /* FHIAppDelegate.m in Sources */,
+				92AE159517EF5C4B00E0CFCF /* FHIShareKitConfigurator.m in Sources */,
 				9266947F17B75374001CBE95 /* FHIPost.m in Sources */,
 				923995CB17DA570600883BD1 /* UIImage+Tint.m in Sources */,
 				9274981617B7C19C007957D4 /* DDXMLElement+HackitAdditions.m in Sources */,

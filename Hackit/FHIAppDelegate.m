@@ -10,6 +10,8 @@
 #import <Crashlytics/Crashlytics.h>
 #import "FHIAppDelegate.h"
 #import "FHIHomeTableViewController.h"
+#import <SHKConfiguration.h>
+#import "FHIShareKitConfigurator.h"
 
 @implementation FHIAppDelegate
 
@@ -18,6 +20,9 @@
     [Crashlytics startWithAPIKey:@"8642627290b54634887afc54ed5ae8a3a5036e20"];
     [[[UIApplication sharedApplication] keyWindow] setTintColor:[UIColor colorWithHue:0.067 saturation:1 brightness:1 alpha:1]];
     // Override point for customization after application launch.
+    
+    FHIShareKitConfigurator *shareKitConfigurator = [[FHIShareKitConfigurator alloc] init];
+    [SHKConfiguration sharedInstanceWithConfigurator:shareKitConfigurator];
 
     return YES;
 }

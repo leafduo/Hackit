@@ -12,6 +12,8 @@
 #import "FHIPost.h"
 #import "FHIEntryCell.h"
 #import "FHIHackerNewsService.h"
+#import <ShareKit.h>
+#import <ShareKit/SHKReadability.h>
 
 @interface FHIHomeTableViewController ()
 
@@ -87,6 +89,8 @@
     SVModalWebViewController *modalWebViewControoler = [[SVModalWebViewController alloc] initWithURL:post.url];
     [self presentViewController:modalWebViewControoler animated:YES completion:NULL];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+//    [SHKReadability shareURL:post.url];
 }
 
 /*
