@@ -7,7 +7,7 @@
 //
 
 #import <SVModalWebViewController.h>
-
+#import <MCSwipeTableViewCell.h>
 #import "FHIHomeTableViewController.h"
 #import "FHIPost.h"
 #import "FHIEntryCell.h"
@@ -15,7 +15,7 @@
 #import <ShareKit.h>
 #import <ShareKit/SHKReadability.h>
 
-@interface FHIHomeTableViewController ()
+@interface FHIHomeTableViewController ()<MCSwipeTableViewCellDelegate>
 
 @end
 
@@ -77,6 +77,7 @@
 {
     static NSString *CellIdentifier = @"FHIEntryCell";
     FHIEntryCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.delegate = self;
     
     FHIPost *post = [_fetchedResultController objectAtIndexPath:indexPath];
     cell.post = post;
@@ -89,8 +90,17 @@
     SVModalWebViewController *modalWebViewControoler = [[SVModalWebViewController alloc] initWithURL:post.url];
     [self presentViewController:modalWebViewControoler animated:YES completion:NULL];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)swipeTableViewCellDidStartSwiping:(MCSwipeTableViewCell *)cell {
     
-//    [SHKReadability shareURL:post.url];
+}
+
+- (void)swipeTableViewCell:(FHIEntryCell *)cell didSwipWithPercentage:(CGFloat)percentage {
+    if (percentage < -0.1) {
+        FHIPost *post = cell.post;
+        [SHKReadability shareURL:post.url];
+    }
 }
 
 /*

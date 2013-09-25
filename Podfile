@@ -10,3 +10,4 @@ pod 'NSDate+TimeAgo'
 pod "Reveal-iOS-SDK"
 pod 'SVWebViewController'
 pod 'SAMGradientView'
+pod 'MCSwipeTableViewCell'

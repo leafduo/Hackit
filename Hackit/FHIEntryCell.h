@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MCSwipeTableViewCell.h>
 
 @class FHIPost;
 
-@interface FHIEntryCell : UITableViewCell
+@interface FHIEntryCell : MCSwipeTableViewCell
 
 @property (nonatomic, strong) FHIPost *post;
 
