@@ -19,6 +19,7 @@
 @dynamic point;
 @dynamic rank;
 @dynamic starred;
+@dynamic sentToReadability;
 @dynamic createDate;
 @dynamic url;
 

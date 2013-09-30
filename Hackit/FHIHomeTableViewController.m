@@ -24,6 +24,8 @@
 }
 
 - (void)awakeFromNib {
+    [SSManagedObject setAutomaticallyResetsPersistentStore:YES];
+
     self.title = @"Home";
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:[FHIPost entityName]];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"rank" ascending:YES]];
@@ -97,8 +99,9 @@
 }
 
 - (void)swipeTableViewCell:(FHIEntryCell *)cell didSwipWithPercentage:(CGFloat)percentage {
-    if (percentage < -0.1) {
-        FHIPost *post = cell.post;
+    FHIPost *post = cell.post;
+    if (percentage < -0.2 && !post.sentToReadability) {
+        post.sentToReadability = YES;
         [SHKReadability shareURL:post.url];
     }
 }

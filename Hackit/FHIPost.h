@@ -23,6 +23,7 @@
 @property (nonatomic, assign) NSUInteger point;
 @property (nonatomic, assign) NSUInteger rank;
 @property (nonatomic, assign) BOOL starred;
+@property (nonatomic, assign) BOOL sentToReadability;
 @property (nonatomic, retain) NSDate *createDate;
 @property (nonatomic, retain) NSURL *url;
 
