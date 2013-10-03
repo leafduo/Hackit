@@ -42,7 +42,7 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)starButtonPressed:(id)sender {
+- (IBAction)starButtonDidPress:(id)sender {
     _post.starred = !_post.starred;
     self.post = _post;
 }
@@ -52,7 +52,7 @@
     self.titleLabel.text = _post.title;
     self.subtextlabel.text = [NSString stringWithFormat:@"%d points %@",
                               post.point, [_post.createDate timeAgo]];
-    CGFloat impact = -pow(2, -(NSInteger)_post.point/64.0) + 1;
+    CGFloat impact = -pow(2, -(NSInteger)_post.point/128.) + 1;
     self.backgroundView.gradientColors = @[[UIColor colorWithHue:0.067
                                                   saturation:impact
                                                   brightness:1

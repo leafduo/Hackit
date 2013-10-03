@@ -51,7 +51,7 @@
                                                     <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                                     <state key="normal" image="star"/>
                                                     <connections>
-                                                        <action selector="starButtonPressed:" destination="pNA-de-dmI" eventType="touchUpInside" id="0fY-8a-qqv"/>
+                                                        <action selector="starButtonDidPress:" destination="pNA-de-dmI" eventType="touchDragInside" id="4fK-fW-bNf"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
