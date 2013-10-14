@@ -42,14 +42,14 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFKissXMLRequestOperation: c5010fd22d4f03371d9960fd09792f7bc3b32f45
   AFNetworking: 7f9bcd7c287a75476cd5c61e82fd3380e93e4c54
-  ISO8601DateFormatter: 077ce9d8cfba171bc1ced6cba0d2ae4aefab7619
+  ISO8601DateFormatter: 72ad8f5b4f51bd8fb317d7284c32fee5f54a6584
   KissXML: 4c66b6f39ef49c23e6bb8d335b94136f12b1b615
   MCSwipeTableViewCell: 99963718edb8fab1449c8e657784f9e835859b6c
   NSDate+TimeAgo: fe93d3042e83093ae3630bc47ae7d57f782733f6
   ReactiveCocoa: 04f49b91365cc946e7ca327bcfb5765fcea69e76
   Reveal-iOS-SDK: 7396a20e743807b1e6f1caae664e1a9dc0cc442c
   SAMGradientView: 5e27ad371ef4e589a52a34c30e23dac177aeffe8
-  ShareKit: d716ac9e74048667f9b0c2208730dff74370819d
+  ShareKit: 068cc7da74bfe96f6be3b3f9c3f3d593f33d0a3f
   SSDataKit: f5fdb3617925a5b8a30afad0496ac58b39c6c517
   SSKeychain: ffa1a79eb716d9ed1ca184fb0cf218087ca28486
   SVWebViewController: 8b32a4b7017bca79799e0fdb0ffc4d47d0769db2
