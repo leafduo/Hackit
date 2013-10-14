@@ -9,31 +9,19 @@
 #import "FHIEntryCell.h"
 #import "FHIPost.h"
 #import <NSDate+TimeAgo.h>
-#import <SAMGradientView.h>
 
 @interface FHIEntryCell ()
 
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) IBOutlet UILabel *subtextlabel;
 @property (nonatomic, strong) IBOutlet UIButton *starButton;
-
-@property (nonatomic, strong) SAMGradientView *backgroundView;
+@property (nonatomic, strong) IBOutlet UIImageView *impactImageView;
 @end
 
 @implementation FHIEntryCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        
-    }
-    return self;
-}
-
-- (void)awakeFromNib {
-    self.backgroundView = [[SAMGradientView alloc] init];
-}
+const CGFloat kImpactImageViewMaxmumDiameter = 25;
+const CGFloat kImpactImageViewMinimumDiameter = 3;
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
@@ -47,19 +35,33 @@
     self.post = _post;
 }
 
+- (void)prepareForReuse {
+    [self.impactImageView removeConstraints:self.impactImageView.constraints];
+}
+
 - (void)setPost:(FHIPost *)post {
     _post = post;
     self.titleLabel.text = _post.title;
     self.subtextlabel.text = [NSString stringWithFormat:@"%d points %@",
                               post.point, [_post.createDate timeAgo]];
     CGFloat impact = -pow(2, -(NSInteger)_post.point/128.) + 1;
-    self.backgroundView.gradientColors = @[[UIColor colorWithHue:0.067
-                                                  saturation:impact
-                                                  brightness:1
-                                                       alpha:1],
-                                           [UIColor whiteColor]];
-    self.backgroundView.gradientLocations = @[@0, @0.8];
-    self.backgroundView.gradientDirection = SAMGradientViewDirectionHorizontal;
+    impact *= 25;
+    impact = MAX(impact, 3);
+    NSArray *constrains = @[[NSLayoutConstraint constraintWithItem:self.impactImageView
+                                                         attribute:NSLayoutAttributeHeight
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:nil
+                                                         attribute:NSLayoutAttributeNotAnAttribute
+                                                        multiplier:0
+                                                          constant:impact],
+                            [NSLayoutConstraint constraintWithItem:self.impactImageView
+                                                         attribute:NSLayoutAttributeWidth
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:nil
+                                                         attribute:NSLayoutAttributeNotAnAttribute
+                                                        multiplier:0
+                                                          constant:impact]];
+    [self.impactImageView addConstraints:constrains];
     if (_post.starred) {
         [_starButton setTintColor:[UIColor colorWithHue:0.067 saturation:1 brightness:1 alpha:1]];
     } else {

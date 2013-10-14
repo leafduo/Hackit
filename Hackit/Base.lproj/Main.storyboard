@@ -98,7 +98,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A9p-lb-sTh" userLabel="Title Label">
-                                            <rect key="frame" x="20" y="8" width="660" height="30"/>
+                                            <rect key="frame" x="41" y="7" width="639" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="5Uf-UF-EL0"/>
@@ -108,7 +108,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vy-nV-Ijn" userLabel="Points Label">
-                                            <rect key="frame" x="20" y="46" width="660" height="16"/>
+                                            <rect key="frame" x="41" y="45" width="639" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -139,22 +139,31 @@
                                                 <constraint firstAttribute="centerY" secondItem="tpf-VT-Ilw" secondAttribute="centerY" id="nFt-Uz-vVD"/>
                                             </constraints>
                                         </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="fqq-oB-4KK">
+                                            <rect key="frame" x="8" y="23" width="25" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" priority="800" constant="25" id="3Yg-Jr-poS"/>
+                                                <constraint firstAttribute="width" priority="800" constant="25" id="jUA-eL-0nG"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="2Vy-nV-Ijn" firstAttribute="leading" secondItem="Q3P-vC-o3j" secondAttribute="leading" constant="20" id="86D-mK-pzn"/>
-                                        <constraint firstItem="A9p-lb-sTh" firstAttribute="top" secondItem="Q3P-vC-o3j" secondAttribute="top" constant="8" id="Aei-DF-lSE"/>
+                                        <constraint firstAttribute="centerY" secondItem="fqq-oB-4KK" secondAttribute="centerY" id="3Gq-55-OTK"/>
                                         <constraint firstItem="Vtz-IW-fkD" firstAttribute="top" secondItem="Q3P-vC-o3j" secondAttribute="top" id="PFX-T8-yV4"/>
                                         <constraint firstAttribute="trailing" secondItem="Vtz-IW-fkD" secondAttribute="trailing" id="a5X-1z-CEu"/>
                                         <constraint firstAttribute="bottom" secondItem="2Vy-nV-Ijn" secondAttribute="bottom" constant="8" id="adi-bw-3j5"/>
-                                        <constraint firstItem="A9p-lb-sTh" firstAttribute="leading" secondItem="Q3P-vC-o3j" secondAttribute="leading" constant="20" id="cdR-Gh-cKn"/>
                                         <constraint firstItem="2Vy-nV-Ijn" firstAttribute="leading" secondItem="A9p-lb-sTh" secondAttribute="leading" id="gFK-hR-Xhf"/>
                                         <constraint firstItem="2Vy-nV-Ijn" firstAttribute="top" secondItem="A9p-lb-sTh" secondAttribute="bottom" constant="8" id="gwd-4W-KSN"/>
                                         <constraint firstItem="Vtz-IW-fkD" firstAttribute="leading" secondItem="A9p-lb-sTh" secondAttribute="trailing" id="oTw-4q-kcb"/>
                                         <constraint firstAttribute="bottom" secondItem="Vtz-IW-fkD" secondAttribute="bottom" id="v2Z-LH-BOA"/>
                                         <constraint firstItem="2Vy-nV-Ijn" firstAttribute="width" secondItem="A9p-lb-sTh" secondAttribute="width" id="xIr-9A-BFQ"/>
+                                        <constraint firstItem="A9p-lb-sTh" firstAttribute="leading" secondItem="fqq-oB-4KK" secondAttribute="trailing" constant="8" id="yUV-Tn-FGS"/>
+                                        <constraint firstItem="fqq-oB-4KK" firstAttribute="leading" secondItem="Q3P-vC-o3j" secondAttribute="leading" constant="8" id="yu6-rf-EJr"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="impactImageView" destination="fqq-oB-4KK" id="BLs-BT-Rbh"/>
                                     <outlet property="starButton" destination="tpf-VT-Ilw" id="GPn-gK-2s9"/>
                                     <outlet property="subtextlabel" destination="2Vy-nV-Ijn" id="TVB-xW-pQX"/>
                                     <outlet property="titleLabel" destination="A9p-lb-sTh" id="O2x-lF-aWo"/>
@@ -206,6 +215,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="circle" width="256" height="256"/>
         <image name="star" width="128" height="128"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
