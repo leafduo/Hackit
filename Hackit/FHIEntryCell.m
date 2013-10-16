@@ -14,7 +14,6 @@
 
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) IBOutlet UILabel *subtextlabel;
-@property (nonatomic, strong) IBOutlet UIButton *starButton;
 @property (nonatomic, strong) IBOutlet UIImageView *impactImageView;
 @end
 
@@ -22,13 +21,6 @@
 
 const CGFloat kImpactImageViewMaxmumDiameter = 25;
 const CGFloat kImpactImageViewMinimumDiameter = 3;
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
 
 - (IBAction)starButtonDidPress:(id)sender {
     _post.starred = !_post.starred;
@@ -62,11 +54,6 @@ const CGFloat kImpactImageViewMinimumDiameter = 3;
                                                         multiplier:0
                                                           constant:impact]];
     [self.impactImageView addConstraints:constrains];
-    if (_post.starred) {
-        [_starButton setTintColor:[UIColor colorWithHue:0.067 saturation:1 brightness:1 alpha:1]];
-    } else {
-        [_starButton setTintColor:[UIColor blackColor]];
-    }
 }
 
 @end
