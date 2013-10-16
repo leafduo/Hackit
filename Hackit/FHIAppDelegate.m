@@ -9,7 +9,6 @@
 #import <SSDataKit.h>
 #import <Crashlytics/Crashlytics.h>
 #import "FHIAppDelegate.h"
-#import "FHIHomeTableViewController.h"
 #import <SHKConfiguration.h>
 #import "FHIShareKitConfigurator.h"
 

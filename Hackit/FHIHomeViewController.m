@@ -20,6 +20,7 @@
 
 @implementation FHIHomeViewController {
     NSFetchedResultsController *_fetchedResultController;
+    __weak UIPopoverController *_settingPopoverController;
     UIRefreshControl *_freshControl;
 }
 
@@ -45,6 +46,23 @@
     [super viewDidLoad];
     [self refreshData:self];
 }
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if (sender == self.navigationItem.leftBarButtonItem) {
+        if (_settingPopoverController) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if (sender == self.navigationItem.leftBarButtonItem) {
+        _settingPopoverController = [(UIStoryboardPopoverSegue *)segue popoverController];
+    }
+}
+
+#pragma mark - Action
 
 - (IBAction)refreshData:(id)sender {
     [_freshControl beginRefreshing];
