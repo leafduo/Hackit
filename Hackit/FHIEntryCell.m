@@ -37,8 +37,8 @@ const CGFloat kImpactImageViewMinimumDiameter = 3;
     self.subtextlabel.text = [NSString stringWithFormat:@"%d points %@",
                               post.point, [_post.createDate timeAgo]];
     CGFloat impact = -pow(2, -(NSInteger)_post.point/128.) + 1;
-    impact *= kImpactImageViewMaxmumDiameter;
-    impact = MAX(impact, kImpactImageViewMinimumDiameter);
+    impact *= 25;
+    impact = MAX(impact, 3);
     NSArray *constrains = @[[NSLayoutConstraint constraintWithItem:self.impactImageView
                                                          attribute:NSLayoutAttributeHeight
                                                          relatedBy:NSLayoutRelationEqual
