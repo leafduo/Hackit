@@ -29,6 +29,7 @@
     dispatch_once(&onceToken, ^{
         _formatter = [[ISO8601DateFormatter alloc] init];
     });
+    
     return _formatter;
 }
 
@@ -46,6 +47,7 @@
 
 + (instancetype)findExistingObjectByIdentifierInXMLElement:(DDXMLElement *)element {
     NSString *identifier = [element stringValueOfFirstChildElementNamed:@"hnsearch_id"];
+    
     return [[self class] findExistingObjectByIdentifier:identifier];
 }
 

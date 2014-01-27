@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FHIHomeTableViewController : UITableViewController<NSFetchedResultsControllerDelegate>
+@interface FHIHomeTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @end

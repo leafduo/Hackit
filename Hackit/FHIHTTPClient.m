@@ -18,6 +18,7 @@
         [AFKissXMLRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"application/rss+xml"]];
         _sharedClient = [[FHIHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"https://www.hnsearch.com/"]];
     });
+    
     return _sharedClient;
 }
 
@@ -26,6 +27,7 @@
     if (self) {
 		[self registerHTTPOperationClass:[AFKissXMLRequestOperation class]];
     }
+    
     return self;
 }
 

@@ -20,6 +20,7 @@
     dispatch_once(&onceToken, ^{
         _sharedService = [[FHIHackerNewsService alloc] init];
     });
+    
     return _sharedService;
 }
 

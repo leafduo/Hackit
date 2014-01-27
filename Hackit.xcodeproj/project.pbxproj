@@ -258,6 +258,7 @@
 				9266942317B6B97D001CBE95 /* Resources */,
 				92B27DCBC0034E57887EB15C /* Copy Pods Resources */,
 				923995D317DBB36900883BD1 /* ShellScript */,
+				923AEA2E1896BEA1001D6F28 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -369,6 +370,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Crashlytics.framework/run 8642627290b54634887afc54ed5ae8a3a5036e20";
+		};
+		923AEA2E1896BEA1001D6F28 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -z ${SKIP_OBJCLEAN} || ${SKIP_OBJCLEAN} != 1 ]]; then\nif [[ -d \"${LOCAL_APPS_DIR}/Objective-Clean.app\" ]]; then\n\"${LOCAL_APPS_DIR}\"/Objective-Clean.app/Contents/Resources/ObjClean.app/Contents/MacOS/ObjClean \"${SRCROOT}\"?FHI\nelse\necho \"warning: You have to install and set up Objective-Clean to use its features!\"\nfi\nfi";
 		};
 		92B27DCBC0034E57887EB15C /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

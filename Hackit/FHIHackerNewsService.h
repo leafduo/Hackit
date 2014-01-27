@@ -10,7 +10,7 @@
 
 typedef void (^FHIHackerNewsServiceCompletionBlock) (NSArray *posts, NSError *error);
 
-@interface FHIHackerNewsService : NSObject<NSXMLParserDelegate>
+@interface FHIHackerNewsService : NSObject <NSXMLParserDelegate>
 
 + (instancetype)sharedService;
 
