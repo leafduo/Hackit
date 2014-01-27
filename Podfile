@@ -7,6 +7,6 @@ pod 'AFKissXMLRequestOperation'
 pod 'SSDataKit'
 pod 'ISO8601DateFormatter'
 pod 'NSDate+TimeAgo'
-pod "Reveal-iOS-SDK"
+pod 'Reveal-iOS-SDK', '=1.0.3'
 pod 'PBWebViewController'
 pod 'MCSwipeTableViewCell'
