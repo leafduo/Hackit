@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 leafduo.com. All rights reserved.
 //
 
-#import <SVModalWebViewController.h>
 #import <MCSwipeTableViewCell.h>
 #import "FHIHomeTableViewController.h"
 #import "FHIPost.h"
 #import "FHIEntryCell.h"
 #import "FHIHackerNewsService.h"
 #import <ShareKit.h>
+#import <PBWebViewController.h>
 #import <ShareKit/SHKReadability.h>
 
 @interface FHIHomeTableViewController ()<MCSwipeTableViewCellDelegate>
@@ -28,7 +28,6 @@
 - (void)awakeFromNib {
     [SSManagedObject setAutomaticallyResetsPersistentStore:YES];
 
-    self.title = @"Home";
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:[FHIPost entityName]];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"rank" ascending:YES]];
     _fetchedResultController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
@@ -91,8 +90,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     FHIPost *post = [_fetchedResultController objectAtIndexPath:indexPath];
-    SVModalWebViewController *modalWebViewControoler = [[SVModalWebViewController alloc] initWithURL:post.url];
-    [self presentViewController:modalWebViewControoler animated:YES completion:NULL];
+    
+    PBWebViewController *webViewController = [[PBWebViewController alloc] init];
+    webViewController.URL = post.url;
+    [self.navigationController pushViewController:webViewController animated:YES];
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

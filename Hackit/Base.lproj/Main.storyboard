@@ -4,84 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
-        <scene sceneID="McP-eA-l8Y">
-            <objects>
-                <tableViewController id="5bQ-Nl-igK" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="NdJ-qg-6F7">
-                        <rect key="frame" x="0.0" y="0.0" width="220" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection headerTitle="Section-1" id="A9F-Kp-z3q">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="oGt-b1-hhr">
-                                        <rect key="frame" x="0.0" y="55" width="220" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oGt-b1-hhr" id="kUN-Pk-A49">
-                                            <rect key="frame" x="0.0" y="0.0" width="220" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="L1r-Rv-6b9">
-                                        <rect key="frame" x="0.0" y="99" width="220" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L1r-Rv-6b9" id="Bzi-R7-sh0">
-                                            <rect key="frame" x="0.0" y="0.0" width="220" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="AE4-gm-wq9">
-                                        <rect key="frame" x="0.0" y="143" width="220" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AE4-gm-wq9" id="GLw-bL-AVG">
-                                            <rect key="frame" x="0.0" y="0.0" width="220" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Section-2" id="GLT-Bb-tMF">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pn5-6r-fXh">
-                                        <rect key="frame" x="0.0" y="235" width="220" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pn5-6r-fXh" id="v5S-xj-xEp">
-                                            <rect key="frame" x="0.0" y="0.0" width="220" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GkU-le-7vo">
-                                        <rect key="frame" x="0.0" y="279" width="220" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GkU-le-7vo" id="4sJ-rw-o8y">
-                                            <rect key="frame" x="0.0" y="0.0" width="220" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="AMF-kk-cdL">
-                                        <rect key="frame" x="0.0" y="323" width="220" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AMF-kk-cdL" id="Bai-GF-TeK">
-                                            <rect key="frame" x="0.0" y="0.0" width="220" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="5bQ-Nl-igK" id="3by-qu-k7e"/>
-                            <outlet property="delegate" destination="5bQ-Nl-igK" id="m0x-6C-14l"/>
-                        </connections>
-                    </tableView>
-                    <nil key="simulatedStatusBarMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l0t-FF-UaS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-277" y="-716"/>
-        </scene>
-        <!--Home Table View Controller-->
+        <!--Home Table View Controller - Hackit-->
         <scene sceneID="xS0-jp-gIW">
             <objects>
                 <tableViewController id="ERk-Ln-cdI" customClass="FHIHomeTableViewController" sceneMemberID="viewController">
@@ -98,19 +21,19 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="639" translatesAutoresizingMaskIntoConstraints="NO" id="A9p-lb-sTh" userLabel="Title Label">
-                                            <rect key="frame" x="41" y="7" width="639" height="30"/>
+                                            <rect key="frame" x="41" y="7" width="639" height="41"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="5Uf-UF-EL0"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vy-nV-Ijn" userLabel="Points Label">
                                             <rect key="frame" x="41" y="45" width="639" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -175,14 +98,7 @@
                             <outlet property="delegate" destination="ERk-Ln-cdI" id="odo-GJ-ogj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="qnR-eL-Y3o">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="hHy-Xp-RGK">
-                            <connections>
-                                <segue destination="5bQ-Nl-igK" kind="popover" popoverAnchorBarButtonItem="hHy-Xp-RGK" id="5uX-65-g0N">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
-                                </segue>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" title="Hackit" id="qnR-eL-Y3o">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="v6T-Ph-vrI">
                             <connections>
                                 <action selector="refreshData:" destination="ERk-Ln-cdI" id="i9L-Y7-fQc"/>
